@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title updates with language toggle — edit both in script.js (pageTitle) -->
+  <title>محمود الحمود  — تصوير فوتوغرافي ومرئيات سينمائية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+       Replace "[Photographer Name]" / "[اسم المصور]" with your name
+       ============================================ -->
+  <header class="site-header" id="top">
+    <nav class="navbar">
+      <a href="#hero" class="nav-logo" data-i18n="brandName"> قزح </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" data-i18n="navAbout">نبذة</a></li>
+        <li><a href="#services" data-i18n="navServices">الخدمات</a></li>
+      <!--<li><a href="#portfolio" data-i18n="navPortfolio">الأعمال</a></li> -->
+        <li><a href="#contact" data-i18n="navContact">تواصل</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Language toggle: AR / EN -->
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-btn is-active" data-lang="ar" aria-pressed="true">AR</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false" data-i18n-aria="menuOpen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================
+         SECTION 1: HERO
+         Replace background image: images/hero.jpg
+         ============================================ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <!-- Replace images/hero.jpg with your hero photo -->
+        <img src="images/hero.jpg" alt="" class="hero-bg-image" onerror="this.style.display='none'">
+        <div class="hero-bg-fallback"></div>
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow" data-i18n="brandName">محمود الحمود </p>
+        <div class="gold-line hero-line"></div>
+        <h1 class="hero-headline" data-i18n="heroHeadline">كل إطار يحكي قصة.</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">تصوير فوتوغرافي ومرئيات سينمائية</p>
+        <div class="hero-buttons">
+          <a href="#services" class="btn btn-gold" data-i18n="heroBtnWork">استكشف أعمالي</a>
+          <a href="#contact" class="btn btn-outline" data-i18n="heroBtnContact">تواصل معي</a>
+        </div>
+      </div>
+
+      <a href="#about" class="hero-scroll" aria-label="الانتقال إلى النبذة" data-i18n-aria="scrollAbout">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============================================
+         SECTION 2: ABOUT
+         Replace portrait: images/about.jpg
+         Edit biography in script.js (aboutBio1, aboutBio2)
+         ============================================ -->
+    <section class="about section" id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <!-- Replace images/about.jpg with your portrait -->
+          <img src="images/Logo.jpeg" alt="" data-i18n-alt="aboutAlt" onerror="this.style.display='none'">
+          <div class="img-fallback" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-text reveal">
+          <p class="section-eyebrow" data-i18n="aboutEyebrow">نبذة</p>
+          <h2 class="section-title" data-i18n="aboutTitle">خلف العدسة</h2>
+          <div class="gold-line"></div>
+          <p class="about-bio" data-i18n="aboutBio1">
+            بشغف نحو الضوء والعاطفة والسرد البصري، أصنع صوراً وأفلاماً تلتقط جوهر كل لحظة.
+            من قصص العلامات التجارية الحميمة إلى السرد السينمائي، يجمع عملي بين الفن والدقة —
+            ليحول المشاهد العادية إلى إطارات لا تُنسى.
+          </p>
+          <p class="about-bio" data-i18n="aboutBio2">
+            بخبرة سنوات خلف الكاميرا، أقدّم نظرة متأنية وحساً سينمائياً لكل مشروع أتولاه.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3: SERVICES
+         Vertical rows with a side button + horizontal image strip.
+         To add more images: copy a .service-thumb inside
+         .service-gallery-track and change the image path.
+         ============================================ -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow" data-i18n="servicesEyebrow">ما أقدمه</p>
+          <h2 class="section-title" data-i18n="servicesTitle">الخدمات</h2>
+          <div class="gold-line gold-line-center"></div>
+        </div>
+
+        <div class="services-list">
+
+          <!-- Service 1: تصوير منيو -->
+          <article class="service-row reveal">
+            <div class="service-text">
+              <h3 data-i18n="service1Title">تصوير منيو</h3>
+              <p data-i18n="service1Desc">تصوير طعام وقوائم بأسلوب فني يجعل كل طبق يبدو لا يُقاوم.</p>
+            </div>
+            <div class="service-gallery">
+              <button type="button" class="service-more-btn" data-i18n="showMore">انقر لعرض المزيد</button>
+              <div class="service-gallery-scroll">
+              <div class="service-gallery-track">
+                <button type="button" class="service-thumb" data-lightbox="images/service-01-01.jpg" data-title-ar="تصوير منيو" data-title-en="Menu Photography">
+                  <img src="images/service-01-01.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-01-02.jpg" data-title-ar="تصوير منيو" data-title-en="Menu Photography">
+                  <img src="images/service-01-02.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-01-03.jpg" data-title-ar="تصوير منيو" data-title-en="Menu Photography">
+                  <img src="images/service-01-03.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-01-04.jpg" data-title-ar="تصوير منيو" data-title-en="Menu Photography">
+                  <img src="images/service-01-04.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-01-05.jpg" data-title-ar="تصوير منيو" data-title-en="Menu Photography">
+                  <img src="images/service-01-05.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+              </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 2: تغطيات -->
+          <!-- <article class="service-row reveal">
+            <div class="service-text">
+              <h3 data-i18n="service2Title">تغطيات</h3>
+              <p data-i18n="service2Desc">تغطية كاملة للفعاليات تلتقط الأجواء والعواطف واللحظات الأهم.</p>
+            </div>
+            <div class="service-gallery">
+              <button type="button" class="service-more-btn" data-i18n="showMore">انقر لعرض المزيد</button>
+              <div class="service-gallery-scroll">
+              <div class="service-gallery-track">
+                <button type="button" class="service-thumb" data-lightbox="images/service-02-01.jpg" data-title-ar="تغطيات" data-title-en="Event Coverage">
+                  <img src="images/service-02-01.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-02-02.jpg" data-title-ar="تغطيات" data-title-en="Event Coverage">
+                  <img src="images/service-02-02.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-02-03.jpg" data-title-ar="تغطيات" data-title-en="Event Coverage">
+                  <img src="images/service-02-03.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-02-04.jpg" data-title-ar="تغطيات" data-title-en="Event Coverage">
+                  <img src="images/service-02-04.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-02-05.jpg" data-title-ar="تغطيات" data-title-en="Event Coverage">
+                  <img src="images/service-02-05.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+              </div>
+              </div>
+            </div>
+          </article> -->
+
+          <!-- Service 3: فيديوهات إعلانية -->
+          <article class="service-row reveal">
+            <div class="service-text">
+              <h3 data-i18n="service3Title">فيديوهات إعلانية</h3>
+              <p data-i18n="service3Desc">فيديوهات إعلانية احترافية ترفع علامتك التجارية وتجذب الجمهور.</p>
+            </div>
+            <div class="service-gallery">
+              <button type="button" class="service-more-btn" data-i18n="showMore">انقر لعرض المزيد</button>
+              <div class="service-gallery-scroll">
+              <div class="service-gallery-track">
+                <!-- SOUND: you control it here in the code (nothing is shown to visitors).
+                     With sound:  <video class="service-video" src="..." playsinline>
+                     Muted:       <video class="service-video" src="..." muted playsinline> -->
+                <div class="service-video-card">
+                  <video class="service-video" src="images/web/service-03-10.mp4" muted playsinline preload="metadata"></video>
+                  <button type="button" class="service-play-btn" aria-label="تشغيل"></button>
+                </div>
+                <div class="service-video-card">
+                  <video class="service-video" src="images/web/service-03-02.mp4" playsinline preload="metadata"></video>
+                  <button type="button" class="service-play-btn" aria-label="تشغيل"></button>
+                </div>
+                <div class="service-video-card">
+                  <video class="service-video" src="images/web/service-03-03.mp4" muted playsinline preload="metadata"></video>
+                  <button type="button" class="service-play-btn" aria-label="تشغيل"></button>
+                </div>
+                <div class="service-video-card">
+                  <video class="service-video" src="images/web/service-03-04.mp4" muted playsinline preload="metadata"></video>
+                  <button type="button" class="service-play-btn" aria-label="تشغيل"></button>
+                </div>
+                <div class="service-video-card">
+                  <video class="service-video" src="images/web/service-03-05.mp4" muted playsinline preload="metadata"></video>
+                  <button type="button" class="service-play-btn" aria-label="تشغيل"></button>
+                </div>
+                <div class="service-video-card">
+                  <video class="service-video" src="images/web/service-03-06.mp4" playsinline preload="metadata"></video>
+                  <button type="button" class="service-play-btn" aria-label="تشغيل"></button>
+                </div>
+                <div class="service-video-card">
+                  <video class="service-video" src="images/web/service-03-07.mp4" muted playsinline preload="metadata"></video>
+                  <button type="button" class="service-play-btn" aria-label="تشغيل"></button>
+                </div>
+                <div class="service-video-card">
+                  <video class="service-video" src="images/web/service-03-08.mp4" muted playsinline preload="metadata"></video>
+                  <button type="button" class="service-play-btn" aria-label="تشغيل"></button>
+                </div>
+                <div class="service-video-card">
+                  <video class="service-video" src="images/web/service-03-09.mp4" muted playsinline preload="metadata"></video>
+                  <button type="button" class="service-play-btn" aria-label="تشغيل"></button>
+                </div>
+                <div class="service-video-card">
+                  <video class="service-video" src="images/web/service-03-01.mp4" playsinline preload="metadata"></video>
+                  <button type="button" class="service-play-btn" aria-label="تشغيل"></button>
+                </div>
+              </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Service 4: فيديوهات سينمائية
+          <article class="service-row reveal">
+            <div class="service-text">
+              <h3 data-i18n="service4Title">فيديوهات سينمائية</h3>
+              <p data-i18n="service4Desc">سرد سينمائي عبر الفيلم — مرئيات غنية وعاطفة وأجواء مميزة.</p>
+            </div>
+            <div class="service-gallery">
+              <button type="button" class="service-more-btn" data-i18n="showMore">انقر لعرض المزيد</button>
+              <div class="service-gallery-scroll">
+              <div class="service-gallery-track">
+                <button type="button" class="service-thumb" data-lightbox="images/service-04-01.jpg" data-title-ar="فيديوهات سينمائية" data-title-en="Cinematic Videos">
+                  <img src="images/service-04-01.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-04-02.jpg" data-title-ar="فيديوهات سينمائية" data-title-en="Cinematic Videos">
+                  <img src="images/service-04-02.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-04-03.jpg" data-title-ar="فيديوهات سينمائية" data-title-en="Cinematic Videos">
+                  <img src="images/service-04-03.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-04-04.jpg" data-title-ar="فيديوهات سينمائية" data-title-en="Cinematic Videos">
+                  <img src="images/service-04-04.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-04-05.jpg" data-title-ar="فيديوهات سينمائية" data-title-en="Cinematic Videos">
+                  <img src="images/service-04-05.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+              </div>
+              </div>
+            </div>
+          </article>  -->
+        
+
+          <!-- Service 5: تصوير براندات -->
+          <article class="service-row reveal">
+            <div class="service-text">
+              <h3 data-i18n="service5Title">تصوير براندات</h3>
+              <p data-i18n="service5Desc">تصوير علامات تجارية فاخر يبني الهوية ويترك انطباعاً دائماً.</p>
+            </div>
+            <div class="service-gallery">
+              <button type="button" class="service-more-btn" data-i18n="showMore">انقر لعرض المزيد</button>
+              <div class="service-gallery-scroll">
+              <div class="service-gallery-track">
+                <button type="button" class="service-thumb" data-lightbox="images/service-05-01.jpg" data-title-ar="تصوير براندات" data-title-en="Brand Photography">
+                  <img src="images/service-05-01.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-05-02.jpg" data-title-ar="تصوير براندات" data-title-en="Brand Photography">
+                  <img src="images/service-05-02.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-05-03.jpg" data-title-ar="تصوير براندات" data-title-en="Brand Photography">
+                  <img src="images/service-05-03.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+                <button type="button" class="service-thumb" data-lightbox="images/service-05-04.jpg" data-title-ar="تصوير براندات" data-title-en="Brand Photography">
+                  <img src="images/service-05-04.jpg" alt="" onerror="this.style.display='none'">
+                  <div class="img-fallback" aria-hidden="true"></div>
+                </button>
+              </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+     <!-- ============================================
+         SECTION 4: PORTFOLIO GALLERY
+         To add a new item: copy one .gallery-item block and change
+           - data-category  (menu | events | commercial | cinematic | brand)
+           - image src
+           - data-title-ar / data-title-en
+           - overlay text (or data-i18n keys)
+         For video items: add class "is-video" and data-video="images/your-video.mp4"
+         ============================================  -->
+    <!-- <section class="portfolio section" id="portfolio">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow" data-i18n="portfolioEyebrow">أعمال مختارة</p>
+          <h2 class="section-title" data-i18n="portfolioTitle">المعرض</h2>
+          <div class="gold-line gold-line-center"></div>
+        </div>
+
+         Category Filters (scroll horizontally on mobile) 
+        <div class="gallery-filters-wrap reveal">
+          <div class="gallery-filters" role="tablist">
+            <button class="filter-btn active" data-filter="all" data-i18n="filterAll">الكل</button>
+            <button class="filter-btn" data-filter="menu" data-i18n="filterMenu">تصوير منيو</button>
+            <button class="filter-btn" data-filter="events" data-i18n="filterEvents">تغطيات</button>
+            <button class="filter-btn" data-filter="commercial" data-i18n="filterCommercial">فيديوهات إعلانية</button>
+            <button class="filter-btn" data-filter="cinematic" data-i18n="filterCinematic">فيديوهات سينمائية</button>
+            <button class="filter-btn" data-filter="brand" data-i18n="filterBrand">تصوير براندات</button>
+          </div>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+
+           Item 1 — Menu Photography 
+          <article class="gallery-item reveal" data-category="menu">
+            <button class="gallery-trigger" data-lightbox="images/project-01.jpg"
+              data-title-ar="تقديم فني" data-title-en="Artisan Plating">
+              <img src="images/project-01.jpg" alt="" onerror="this.style.display='none'">
+              <div class="img-fallback" aria-hidden="true"></div>
+              <div class="gallery-overlay">
+                <h3 data-i18n="project1Title">تقديم فني</h3>
+                <span data-i18n="filterMenu">تصوير منيو</span>
+              </div>
+            </button>
+          </article>
+
+           Item 2 — Event Coverage 
+          <article class="gallery-item gallery-item-wide reveal" data-category="events">
+            <button class="gallery-trigger" data-lightbox="images/project-02.jpg"
+              data-title-ar="أمسية راقية" data-title-en="Evening Gala">
+              <img src="images/project-02.jpg" alt="" onerror="this.style.display='none'">
+              <div class="img-fallback" aria-hidden="true"></div>
+              <div class="gallery-overlay">
+                <h3 data-i18n="project2Title">أمسية راقية</h3>
+                <span data-i18n="filterEvents">تغطيات</span>
+              </div>
+            </button>
+          </article>
+
+           Item 3 — Commercial Video 
+          <article class="gallery-item is-video reveal" data-category="commercial">
+            <button class="gallery-trigger" data-video="images/project-03.mp4"
+              data-title-ar="إعلان علامة تجارية" data-title-en="Brand Campaign Spot"
+              data-poster="images/project-03.jpg">
+              <img src="images/project-03.jpg" alt="" onerror="this.style.display='none'">
+              <div class="img-fallback" aria-hidden="true"></div>
+              <div class="play-icon" aria-hidden="true"></div>
+              <div class="gallery-overlay">
+                <h3 data-i18n="project3Title">إعلان علامة تجارية</h3>
+                <span data-i18n="filterCommercial">فيديوهات إعلانية</span>
+              </div>
+            </button>
+          </article>
+
+           Item 4 — Cinematic Video 
+          <article class="gallery-item gallery-item-tall is-video reveal" data-category="cinematic">
+            <button class="gallery-trigger" data-video="images/project-04.mp4"
+              data-title-ar="فيلم الساعة الذهبية" data-title-en="Golden Hour Film"
+              data-poster="images/project-04.jpg">
+              <img src="images/project-04.jpg" alt="" onerror="this.style.display='none'">
+              <div class="img-fallback" aria-hidden="true"></div>
+              <div class="play-icon" aria-hidden="true"></div>
+              <div class="gallery-overlay">
+                <h3 data-i18n="project4Title">فيلم الساعة الذهبية</h3>
+                <span data-i18n="filterCinematic">فيديوهات سينمائية</span>
+              </div>
+            </button>
+          </article>
+
+          Item 5 — Brand Photography 
+          <article class="gallery-item reveal" data-category="brand">
+            <button class="gallery-trigger" data-lightbox="images/project-05.jpg"
+              data-title-ar="دراسة منتج فاخر" data-title-en="Luxury Product Study">
+              <img src="images/project-05.jpg" alt="" onerror="this.style.display='none'">
+              <div class="img-fallback" aria-hidden="true"></div>
+              <div class="gallery-overlay">
+                <h3 data-i18n="project5Title">دراسة منتج فاخر</h3>
+                <span data-i18n="filterBrand">تصوير براندات</span>
+              </div>
+            </button>
+          </article>
+
+           Item 6 — Menu Photography 
+          <article class="gallery-item reveal" data-category="menu">
+            <button class="gallery-trigger" data-lightbox="images/project-06.jpg"
+              data-title-ar="مجموعة الحلويات" data-title-en="Dessert Collection">
+              <img src="images/project-06.jpg" alt="" onerror="this.style.display='none'">
+              <div class="img-fallback" aria-hidden="true"></div>
+              <div class="gallery-overlay">
+                <h3 data-i18n="project6Title">مجموعة الحلويات</h3>
+                <span data-i18n="filterMenu">تصوير منيو</span>
+              </div>
+            </button>
+          </article>
+
+           Item 7 — Event Coverage 
+          <article class="gallery-item reveal" data-category="events">
+            <button class="gallery-trigger" data-lightbox="images/project-07.jpg"
+              data-title-ar="احتفال خاص" data-title-en="Private Celebration">
+              <img src="images/project-07.jpg" alt="" onerror="this.style.display='none'">
+              <div class="img-fallback" aria-hidden="true"></div>
+              <div class="gallery-overlay">
+                <h3 data-i18n="project7Title">احتفال خاص</h3>
+                <span data-i18n="filterEvents">تغطيات</span>
+              </div>
+            </button>
+          </article>
+
+           Item 8 — Brand Photography 
+          <article class="gallery-item gallery-item-wide reveal" data-category="brand">
+            <button class="gallery-trigger" data-lightbox="images/project-08.jpg"
+              data-title-ar="قصة علامة تحريرية" data-title-en="Editorial Brand Story">
+              <img src="images/project-08.jpg" alt="" onerror="this.style.display='none'">
+              <div class="img-fallback" aria-hidden="true"></div>
+              <div class="gallery-overlay">
+                <h3 data-i18n="project8Title">قصة علامة تحريرية</h3>
+                <span data-i18n="filterBrand">تصوير براندات</span>
+              </div>
+            </button>
+          </article>
+
+           Item 9 — Cinematic Video 
+          <article class="gallery-item is-video reveal" data-category="cinematic">
+            <button class="gallery-trigger" data-video="images/project-09.mp4"
+              data-title-ar="إطارات صامتة" data-title-en="Silent Frames"
+              data-poster="images/project-09.jpg">
+              <img src="images/project-09.jpg" alt="" onerror="this.style.display='none'">
+              <div class="img-fallback" aria-hidden="true"></div>
+              <div class="play-icon" aria-hidden="true"></div>
+              <div class="gallery-overlay">
+                <h3 data-i18n="project9Title">إطارات صامتة</h3>
+                <span data-i18n="filterCinematic">فيديوهات سينمائية</span>
+              </div>
+            </button>
+          </article>
+
+        </div>
+      </div>
+    </section>  -->
+
+    <!-- ============================================
+         SECTION 5: CONTACT
+         Replace WhatsApp number, email, and Instagram URL below
+         ============================================ -->
+    <section class="contact section" id="contact">
+      <div class="container contact-inner reveal">
+        <p class="section-eyebrow" data-i18n="contactEyebrow">تواصل معنا</p>
+        <h2 class="section-title" data-i18n="contactTitle">لنصنع شيئاً استثنائياً.</h2>
+        <div class="gold-line gold-line-center"></div>
+        <p class="contact-text" data-i18n="contactText">هل أنت مستعد لتحويل رؤيتك إلى واقع؟ تواصل معي لنبدأ الحوار.</p>
+
+        <div class="contact-links">
+          <!-- Replace 0000000000 with your WhatsApp number (country code + number, no + or spaces) -->
+          <a href="https://wa.me/0000000000" class="btn btn-gold" target="_blank" rel="noopener noreferrer" data-i18n="btnWhatsApp">واتساب</a>
+
+          <!-- Replace your@email.com with your email -->
+          <a href="mailto:your@email.com" class="btn btn-outline" data-i18n="btnEmail">البريد</a>
+
+          <!-- Replace the Instagram URL with yours -->
+          <a href="https://instagram.com/yourusername" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-i18n="btnInstagram">إنستغرام</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       Replace name and social links
+       ============================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-name" data-i18n="brandName">[اسم المصور]</p>
+      <div class="footer-social">
+        <!-- Replace these links with your real profiles -->
+        <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" data-i18n="btnInstagram">إنستغرام</a>
+        <a href="https://wa.me/0596391341" target="_blank" rel="noopener noreferrer" data-i18n="btnWhatsApp">واتساب</a>
+        <a href="mailto:your@email.com" data-i18n="btnEmail">البريد</a>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="year"></span>
+        <span data-i18n="brandName">[اسم المصور]</span>.
+        <span data-i18n="footerRights">جميع الحقوق محفوظة.</span>
+      </p>
+      <a href="#top" class="back-to-top" data-i18n="backToTop">العودة للأعلى ↑</a>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       LIGHTBOX (images)
+       ============================================ -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="إغلاق" data-i18n-aria="close">&times;</button>
+    <img src="" alt="" id="lightboxImage">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <!-- ============================================
+       VIDEO MODAL
+       ============================================ -->
+  <div class="video-modal" id="videoModal" hidden>
+    <button class="lightbox-close" id="videoClose" aria-label="إغلاق" data-i18n-aria="close">&times;</button>
+    <div class="video-modal-inner">
+      <div class="video-frame">
+        <video id="modalVideo" controls playsinline preload="metadata" poster="images/Logo.jpeg">
+          متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+      </div>
+      <p class="lightbox-caption" id="videoCaption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

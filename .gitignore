@@ -1,0 +1,7 @@
+# Original camera files are too large for GitHub (100 MB limit).
+# The website uses the smaller copies inside images/web/
+images/*.mov
+images/service-03-01.mp4
+images/service-03-02.mp4
+images/service-03-03.mp4
+images/copy_*.mov
