@@ -20,7 +20,7 @@
   const translations = {
     ar: {
       pageTitle: "محمود الحمود  — تصوير فوتوغرافي ومرئيات سينمائية",
-      brandName: "قزح  ",
+      brandName: "قَزح",
       navAbout: "نبذة ",
       navServices: "الخدمات",
       navPortfolio: "الأعمال",
@@ -33,7 +33,7 @@
       heroSubtitle: "تصوير فوتوغرافي ومرئيات سينمائية",
       heroBtnWork: "استكشف أعمالي",
       heroBtnContact: "تواصل معي",
-      aboutEyebrow: "نبذة عن قزح ",
+      aboutEyebrow: "نبذة عن قَزح",
       aboutTitle: "خلف العدسة",
       aboutAlt: "صورة المصور",
       aboutBio1:
@@ -48,8 +48,8 @@
       service2Desc: "تغطية كاملة للفعاليات تلتقط الأجواء والعواطف واللحظات الأهم.",
       service3Title: "فيديوهات إعلانية",
       service3Desc: "فيديوهات إعلانية احترافية ترفع علامتك التجارية وتجذب الجمهور.",
-      service4Title: "فيديوهات سينمائية",
-      service4Desc: "سرد سينمائي عبر الفيلم — مرئيات غنية وعاطفة وأجواء مميزة.",
+      service4Title: "ريلز",
+      service4Desc: "ريلز قصيرة وجذابة مصممة لوسائل التواصل وحضور أقوى على الموبايل.",
       service5Title: "تصوير براندات",
       service5Desc: "تصوير علامات تجارية فاخر يبني الهوية ويترك انطباعاً دائماً.",
       showMore: "انقر لعرض اقل",
@@ -114,9 +114,9 @@
       service3Title: "Commercial Videos",
       service3Desc:
         "Polished commercial videos designed to elevate your brand and engage audiences.",
-      service4Title: "Cinematic Videos",
+      service4Title: "Reels",
       service4Desc:
-        "Cinematic storytelling through film — rich visuals, emotion, and atmosphere.",
+        "Short, engaging reels made for social media and a stronger mobile presence.",
       service5Title: "Brand Photography",
       service5Desc:
         "Premium brand photography that builds identity and leaves a lasting impression.",
@@ -466,7 +466,6 @@
     if (!vid || !playBtn) return;
 
     vid.removeAttribute("controls");
-    vid.removeAttribute("poster");
     vid.controls = false;
 
     function syncPlayState() {
