@@ -592,7 +592,7 @@ html[lang="en"] .hero-subtitle {
   height: 100%;
   object-fit: contain;
   background: transparent;
-  mix-blend-mode: lighten;
+  mix-blend-mode: normal;
   transition: transform 0.8s var(--ease);
 }
 
