@@ -48,8 +48,8 @@
       service2Desc: "تغطية كاملة للفعاليات تلتقط الأجواء والعواطف واللحظات الأهم.",
       service3Title: "فيديوهات إعلانية",
       service3Desc: "فيديوهات إعلانية احترافية ترفع علامتك التجارية وتجذب الجمهور.",
-      service4Title: "ريلز",
-      service4Desc: "ريلز قصيرة وجذابة مصممة لوسائل التواصل وحضور أقوى على الموبايل.",
+      service4Title: "تصوير ريلز",
+      service4Desc: "تصوير ريلز قصيرة وجذابة لوسائل التواصل وحضور أقوى على الموبايل.",
       service5Title: "تصوير براندات",
       service5Desc: "تصوير علامات تجارية فاخر يبني الهوية ويترك انطباعاً دائماً.",
       showMore: "انقر لعرض اقل",
@@ -114,9 +114,9 @@
       service3Title: "Commercial Videos",
       service3Desc:
         "Polished commercial videos designed to elevate your brand and engage audiences.",
-      service4Title: "Reels",
+      service4Title: "Reels Photography",
       service4Desc:
-        "Short, engaging reels made for social media and a stronger mobile presence.",
+        "Short, engaging reel photography made for social media and a stronger mobile presence.",
       service5Title: "Brand Photography",
       service5Desc:
         "Premium brand photography that builds identity and leaves a lasting impression.",
