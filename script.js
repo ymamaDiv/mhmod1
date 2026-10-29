@@ -83,7 +83,7 @@
     },
     en: {
       pageTitle: "Mhmod Al-hmod — Photography & Cinematic Visuals",
-      brandName: "  Qozh ",
+      brandName: "  Qazah ",
       navAbout: "About ",
       navServices: "Services",
       navPortfolio: "Portfolio",
@@ -96,7 +96,7 @@
       heroSubtitle: "Photography & Cinematic Visuals",
       heroBtnWork: "Explore My Work",
       heroBtnContact: "Contact Me",
-      aboutEyebrow: "About Qozh",
+      aboutEyebrow: "About Qazah",
       aboutTitle: "Behind the Lens",
       aboutAlt: "Photographer portrait",
       aboutBio1:
