@@ -475,15 +475,14 @@
 
     playBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      $$(".service-video").forEach((other) => {
-        if (other !== vid) other.pause();
-      });
-      const playPromise = vid.play();
-      if (playPromise !== undefined) playPromise.catch(() => {});
+      const src = vid.getAttribute("src") || vid.currentSrc;
+      openVideo(src, "", null, vid.muted);
     });
 
-    card.addEventListener("click", () => {
-      if (!vid.paused) vid.pause();
+    card.addEventListener("click", (e) => {
+      if (e.target.closest(".service-play-btn")) return;
+      const src = vid.getAttribute("src") || vid.currentSrc;
+      openVideo(src, "", null, vid.muted);
     });
 
     vid.addEventListener("play", () => {
@@ -554,7 +553,10 @@
   }
 
   if (lightboxClose) {
-    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxClose.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
   }
 
   if (lightbox) {
@@ -570,29 +572,27 @@
   const modalVideo = $("#modalVideo");
   const videoCaption = $("#videoCaption");
   const videoClose = $("#videoClose");
-  const DEFAULT_POSTER = "images/Logo.jpeg";
-
   function isVideoPath(path) {
     return /\.(mp4|m4v|mov|webm|ogg)(\?|#|$)/i.test(path || "");
   }
 
-  function openVideo(src, title, poster) {
+  function openVideo(src, title, poster, startMuted) {
     if (!videoModal || !modalVideo || !src) return;
 
     $$(".service-video").forEach((other) => other.pause());
 
     modalVideo.pause();
     modalVideo.removeAttribute("src");
+    modalVideo.removeAttribute("poster");
     modalVideo.innerHTML = "";
 
     const resolved = new URL(src, window.location.href).href;
 
-    modalVideo.poster = poster || DEFAULT_POSTER;
-    modalVideo.controls = true;
-    modalVideo.setAttribute("controls", "");
+    modalVideo.controls = false;
+    modalVideo.removeAttribute("controls");
     modalVideo.setAttribute("playsinline", "");
-    modalVideo.setAttribute("preload", "metadata");
-
+    modalVideo.setAttribute("preload", "auto");
+    modalVideo.muted = !!startMuted;
     modalVideo.src = resolved;
 
     if (videoCaption) videoCaption.textContent = title || "";
@@ -620,18 +620,33 @@
       videoModal.hidden = true;
       modalVideo.removeAttribute("src");
       modalVideo.innerHTML = "";
-      modalVideo.poster = DEFAULT_POSTER;
       modalVideo.load();
     }, 350);
   }
 
   if (videoClose) {
-    videoClose.addEventListener("click", closeVideo);
+    videoClose.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeVideo();
+    });
   }
 
   if (videoModal) {
     videoModal.addEventListener("click", (e) => {
-      if (e.target === videoModal) closeVideo();
+      if (e.target === videoModal || e.target.classList.contains("video-frame") || e.target.classList.contains("video-modal-inner")) {
+        closeVideo();
+      }
+    });
+  }
+
+  if (modalVideo) {
+    modalVideo.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (modalVideo.paused) {
+        modalVideo.play().catch(() => {});
+      } else {
+        modalVideo.pause();
+      }
     });
   }
 
@@ -643,12 +658,10 @@
       const videoSrc = trigger.getAttribute("data-video");
       const imageSrc = trigger.getAttribute("data-lightbox");
       const title = getItemTitle(trigger);
-      const poster = trigger.getAttribute("data-poster") || DEFAULT_POSTER;
-
       if (videoSrc) {
-        openVideo(videoSrc, title, poster);
+        openVideo(videoSrc, title, null, false);
       } else if (isVideoPath(imageSrc)) {
-        openVideo(imageSrc, title, poster);
+        openVideo(imageSrc, title, null, false);
       } else if (imageSrc) {
         openLightbox(imageSrc, title);
       }
