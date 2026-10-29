@@ -338,12 +338,20 @@
     anchor.addEventListener("click", (e) => {
       const id = anchor.getAttribute("href");
       if (!id || id === "#") return;
+
+      /* Fixed header is always in the viewport, so #top must scroll to 0. */
+      if (id === "#top") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
       const target = $(id);
       if (!target) return;
       e.preventDefault();
       const offset = header ? header.offsetHeight : 0;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: "smooth" });
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
     });
   });
 
