@@ -760,6 +760,12 @@ html[lang="en"] .service-more-btn {
   width: max-content;
 }
 
+/* Arabic desktop: sit the strip on the right. When it overflows (phones),
+   the auto margin collapses so scroll still starts after the more-button. */
+html[lang="ar"] .service-gallery-track {
+  margin-left: auto;
+}
+
 .service-thumb {
   position: relative;
   display: block;
